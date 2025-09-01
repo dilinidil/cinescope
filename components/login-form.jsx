@@ -14,8 +14,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { EMAIL_REGEX } from "@/lib/constants";
-import { redirect } from "next/dist/server/api-utils";
 import { signIn } from "@/lib/auth-client";
+import { useRouter } from "next/navigation"
 
 const DEFAULT_ERROR = {
   error: false,
@@ -30,6 +30,7 @@ const DEFAULT_LOAD = {
 export default function LoginForm() {
   const [error, SetError] = useState(DEFAULT_ERROR);
   const [isLoading, setIsLoading] = useState(DEFAULT_LOAD);
+  const router = useRouter();
 
   const validateForm = ({ email, password }) => {
     console.log("Email:", email, " - ", "Password:", password);
@@ -87,7 +88,7 @@ export default function LoginForm() {
           {
             onSuccess: (ctx) => {
               console.log("Login successful", ctx);
-              //redirect("/admin/dashboard");
+              router.push("/dashboard");
             },
             onError: (ctx) => {
               SetError({
@@ -108,6 +109,7 @@ export default function LoginForm() {
         //   console.log("Login successful", loginData);
         // }
       } catch (error) {
+        console.log(error);
         // Handle network or other errors
         SetError({
           error: true,

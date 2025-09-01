@@ -1,6 +1,9 @@
+import { Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import MoviesList from "./movies-list";
+import MoviesList from "@/components/home/movies-list";
+import { MoviesListSkeleton } from "@/components/home/movies-list";
 
+// React Server Component
 export default function FeaturedMovies() {
   return (
     <section id="featured-movies" className="container px-4 py-12 md:px-6">
@@ -8,7 +11,10 @@ export default function FeaturedMovies() {
       <div className="mb-6 flex items-center justify-between">
         <div>
           <h2 className="text-3xl font-bold tracking-tight">Featured Movies</h2>
-          <p className="text-muted-foreground">Explore the latest and greatest movies that are making waves in the cinema world.</p>
+          <p className="text-muted-foreground">
+            Explore the latest and greatest movies that are making waves in the
+            cinema world.
+          </p>
         </div>
         <Button variant="outline">View All</Button>
       </div>
@@ -19,9 +25,9 @@ export default function FeaturedMovies() {
       </div>
 
       {/* Movies List */}
-      <div>
+      <Suspense fallback={<MoviesListSkeleton />}>
         <MoviesList />
-      </div>
+      </Suspense>
     </section>
   );
 }

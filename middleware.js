@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { getSessionCookie } from "better-auth/cookies";
-import { getSession } from "better-auth/api";
 
 // This function can be marked `async` if using `await` inside
 export function middleware(request) {
@@ -14,5 +13,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: "/admin/:path*",
+  matcher: "/dashboard/:path*",
 };
