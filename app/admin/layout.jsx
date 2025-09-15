@@ -3,7 +3,7 @@ import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import UserNav from "@/components/user-nav";
 
 export const metadata = {
-  title: "Cinescope | Dashboard",
+  title: "Cinescope | Admin Dashboard",
   description: "Movie Database and Management Dashboard",
 };
 

@@ -28,7 +28,7 @@ export default function HeaderNav({ isAuthenticated }) {
           </Link>
           {isAuthenticated && (
             <Link
-              href="/dashboard"
+              href="/admin"
               className="font-medium text-sm transition-colors"
             >
               Dashboard

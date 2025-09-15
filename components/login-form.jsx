@@ -88,7 +88,7 @@ export default function LoginForm() {
           {
             onSuccess: (ctx) => {
               console.log("Login successful", ctx);
-              router.push("/dashboard");
+              router.push("/admin");
             },
             onError: (ctx) => {
               SetError({

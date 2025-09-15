@@ -28,16 +28,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const menuItems = [
-  { title: "Dashboard", href: "/dashboard", icon: HomeIcon, exact: true },
-  { title: "Movies", href: "/dashboard/movies", icon: FilmIcon },
-  { title: "Users", href: "/dashboard/users", icon: UsersIcon },
-  { title: "Reviews", href: "/dashboard/reviews", icon: MessageSquareIcon },
-  { title: "Analytics", href: "/dashboard/analytics", icon: BarChartIcon },
-  { title: "Settings", href: "/dashboard/settings", icon: SettingsIcon },
+  { title: "Dashboard", href: "/admin", icon: HomeIcon, exact: true },
+  { title: "Movies", href: "/admin/movies", icon: FilmIcon },
+  { title: "Users", href: "/admin/users", icon: UsersIcon },
+  { title: "Reviews", href: "/admin/reviews", icon: MessageSquareIcon },
+  { title: "Analytics", href: "/admin/analytics", icon: BarChartIcon },
+  { title: "Settings", href: "/admin/settings", icon: SettingsIcon },
 ];
 
 const accountItems = [
-  { title: "Profile", href: "/dashboard/profile", icon: UserIcon },
+  { title: "Profile", href: "/admin/profile", icon: UserIcon },
   { title: "Public Site", href: "/", icon: FilmIcon },
 ];
 
@@ -60,7 +60,7 @@ export function AdminSidebar() {
       <SidebarHeader className="flex flex-col">
         <div className="flex items-center p-2">
           <Logo />
-          <h2 className="ml-2 text-xl font-medium">CineScope</h2>
+          <h2 className="ml-2 text-xl font-bold">CineScope</h2>
           <div className="ml-auto flex items-center">
             <ModeToggle />
           </div>
